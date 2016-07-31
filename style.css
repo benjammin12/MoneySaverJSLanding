@@ -1,0 +1,41 @@
+
+.topHeader{
+    background-color: papayawhip;
+    width:100% !important;
+    height: 150px;
+    margin-bottom: 20px;
+    padding-top:50px;
+    text-align: center;
+}
+
+.container{
+
+}
+
+
+
+.exText{
+    color: grey;
+    border-width: thin;
+    border-style: solid;
+    display: inline-block;
+
+}
+
+#savings {
+    color: #8c8c8c;
+    background-color: #84c6ff;
+
+}
+
+#savings:hover{
+    background-color: white;
+}
+
+hr{
+    background-color:  papayawhip;
+}
+
+#greetingMSG, #currSavings {
+    font-size: 200%;
+}
