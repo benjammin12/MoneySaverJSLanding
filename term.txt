@@ -1,0 +1,5 @@
+git checkout -b gh-pages
+
+git push origin gh-pages
+
+git push --set-upstream origin gh-pages

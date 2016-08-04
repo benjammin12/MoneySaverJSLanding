@@ -60,18 +60,17 @@
     </div>
 </div> <!-- close getName div, Everything in here will dissapear-->
 
-   <div class="jumbotron">
+
     <p id="greetingMSG"> </p>
 
     <p id="currSavings"> </p>
-   </div>
+
 
 <hr>
 <br>
 
 
-
-
+    <section id="addMoneySpent">
     <h2 class="text-md-center">Calculate what you could save</h2>
 
     <p class="exText">Enter an amount you spend every work day <br /> Example, you get a coffee everyday for $2</p>
@@ -87,8 +86,15 @@
         <button class="isClicked" type="button" onclick="calcYearly()" class="btn btn-primary">Submit</button>
     </form>
 
+
+    </section>
+    <button type="button" class="btn btn-default" id="addForm" aria-label="Right Align">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </button>
+
     <p id="amntSaved"></p>
     <p id="posSavings"></p>
+    <p id="newForm"></p>
 
     <h4 style="color:red">TODO:  Plus button that adds another calc savings button for another daily expenditure</h4>
     <h5 style="color:red">TODO:  Add save info tool that allows you to take all the useful information into a printable format</h5>

@@ -8,10 +8,7 @@
 function displayInfo(){
 
     var fName = document.getElementById("firstName").value;
-    fName.toString();
     var lName = document.getElementById("lastName").value;
-    lName.toString();
-
     var savings = document.getElementById("userSavings").value;
 
 
@@ -55,3 +52,47 @@ function calcYearly() {
     var ele = document.getElementById('posSavings');
     ele.innerHTML = "You could have save " + (amt/2) + " per year, if you purchase this item every other day";
 }
+/*
+plus = document.getElementById('addForm');
+plus.addEventListener('click', add);
+
+function add(){
+   var button = document.getElementById('addForm');
+    document.body.appendChild('<form class="form-inline">' +
+                                '<div class="form-group">' +
+                                '<label class="sr-only" for="Amount">Amount (in dollars)</label>'+
+                                '<div class="input-group">' +
+                                '<div class="input-group-addon">$</div>' +
+                                '<input type="text" class="form-control" id="Amount" placeholder="Daily Amount">' +
+                                '</div>'+
+                                '</div>'+
+                                '<button class="isClicked" type="button" onclick="calcYearly()" class="btn btn-primary">Submit</button>'+
+                                '</form>'+
+
+
+                                '</section>'+
+                                '<button type="button" class="btn btn-default" id="addForm" aria-label="Right Align">'+
+                                '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>'+
+                                '</button>'
+)}
+*/
+$('#addForm').click(function(){
+    $('#newForm').append('<form class="form-inline">' +
+        '<div class="form-group">' +
+        '<label class="sr-only" for="Amount">Amount (in dollars)</label>'+
+        '<div class="input-group">' +
+        '<div class="input-group-addon">$</div>' +
+        '<input type="text" class="form-control" id="Amount" placeholder="Daily Amount">' +
+        '</div>'+
+        '</div>'+
+        '<button class="isClicked" type="button" onclick="calcYearly()" class="btn btn-primary">Submit</button>'+
+        '</form>'
+
+/*
+        '</section>'+
+        '<button type="button" class="btn btn-default" id="addForm" aria-label="Right Align">'+
+        '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>'+
+        '</button>'
+
+  add button along with form?      */
+    )});

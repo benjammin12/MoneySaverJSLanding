@@ -39,3 +39,7 @@ hr{
 #greetingMSG, #currSavings {
     font-size: 200%;
 }
+
+#addForm {
+    margin-left: 20%;
+}
