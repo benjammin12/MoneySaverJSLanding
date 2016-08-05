@@ -37,7 +37,9 @@ function displayInfo(){
 
 //jQuery .click function
 $(".getN").click(function(){
+    $(".niceBorder").addClass('jumbotron text-lg-center');
     $("#getName").fadeOut(1000);
+
 });
 
 
@@ -52,31 +54,14 @@ function calcYearly() {
     var ele = document.getElementById('posSavings');
     ele.innerHTML = "You could have save " + (amt/2) + " per year, if you purchase this item every other day";
 }
-/*
-plus = document.getElementById('addForm');
-plus.addEventListener('click', add);
 
-function add(){
-   var button = document.getElementById('addForm');
-    document.body.appendChild('<form class="form-inline">' +
-                                '<div class="form-group">' +
-                                '<label class="sr-only" for="Amount">Amount (in dollars)</label>'+
-                                '<div class="input-group">' +
-                                '<div class="input-group-addon">$</div>' +
-                                '<input type="text" class="form-control" id="Amount" placeholder="Daily Amount">' +
-                                '</div>'+
-                                '</div>'+
-                                '<button class="isClicked" type="button" onclick="calcYearly()" class="btn btn-primary">Submit</button>'+
-                                '</form>'+
-
-
-                                '</section>'+
-                                '<button type="button" class="btn btn-default" id="addForm" aria-label="Right Align">'+
-                                '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>'+
-                                '</button>'
-)}
-*/
 $('#addForm').click(function(){
+  /*
+    if ($('#newForm').val()=== ""){
+        $('#newform').append("lkjl;jl");
+    } else  {
+
+    */
     $('#newForm').append('<form class="form-inline">' +
         '<div class="form-group">' +
         '<label class="sr-only" for="Amount">Amount (in dollars)</label>'+
@@ -86,13 +71,13 @@ $('#addForm').click(function(){
         '</div>'+
         '</div>'+
         '<button class="isClicked" type="button" onclick="calcYearly()" class="btn btn-primary">Submit</button>'+
-        '</form>'
+        '</form>'+
+            '<br>'
 
-/*
-        '</section>'+
-        '<button type="button" class="btn btn-default" id="addForm" aria-label="Right Align">'+
-        '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>'+
-        '</button>'
-
-  add button along with form?      */
     )});
+document.onload
+{
+    var subButton = document.getElementById('submitButton');
+
+  subButton.addEventListener('click', calcYearly);
+};

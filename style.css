@@ -1,4 +1,9 @@
 
+body {
+    background-image: url(images/dollar.jpg);
+    background-size: 100%;
+}
+
 .topHeader{
     background-color: papayawhip;
     width:100% !important;
@@ -11,7 +16,6 @@
 .container{
 
 }
-
 
 
 .exText{

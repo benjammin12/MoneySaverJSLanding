@@ -31,21 +31,16 @@
     <h1>Welcome</h1>
     <div class="container text-lg-center">
 
+        <br>
+
         <form class="form-inline">
             <div class="form-group">
+
 
                 <div class="input-group">
 
                     <input type="text" class="form-control" id="firstName" placeholder="Enter your first name: ">
                 </div>
-            </div>
-
-        </form>
-
-        <br>
-
-        <form class="form-inline">
-            <div class="form-group">
 
                 <div class="input-group">
                     <input type="text" class="form-control" id="lastName" placeholder="Enter your last name: ">
@@ -60,11 +55,11 @@
     </div>
 </div> <!-- close getName div, Everything in here will dissapear-->
 
+    <div class="niceBorder">
+        <p id="greetingMSG"> </p>
+        <p id="currSavings"> </p>
 
-    <p id="greetingMSG"> </p>
-
-    <p id="currSavings"> </p>
-
+    </div>
 
 <hr>
 <br>
@@ -83,9 +78,8 @@
                 <input type="text" class="form-control" id="Amount" placeholder="Daily Amount">
             </div>
         </div>
-        <button class="isClicked" type="button" onclick="calcYearly()" class="btn btn-primary">Submit</button>
+        <button id="submitButton" type="button" class="btn btn-primary">Submit</button>
     </form>
-
 
     </section>
     <button type="button" class="btn btn-default" id="addForm" aria-label="Right Align">
