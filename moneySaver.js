@@ -9,8 +9,7 @@ function displayInfo(){
 
     var fName = document.getElementById("firstName").value;
     var lName = document.getElementById("lastName").value;
-    var savings = document.getElementById("userSavings").value;
-
+    window.savings = document.getElementById("userSavings").value; //make global
 
     var person = {
         name:fName,
@@ -55,29 +54,48 @@ function calcYearly() {
     ele.innerHTML = "You could have save " + (amt/2) + " per year, if you purchase this item every other day";
 }
 
-$('#addForm').click(function(){
-  /*
-    if ($('#newForm').val()=== ""){
-        $('#newform').append("lkjl;jl");
-    } else  {
+function calcNewFormYearly(){
+    var amt = document.getElementById("newFormAmount").value;
+    if (isNaN(amt)) {
+        document.getElementById('amntSaved').innerHTML = "You must enter a number";
+        return;
+    }
+    amt = amt * 260;
+    document.getElementById('amntSaved').innerHTML = "You spend " + amt + " yearly.";
+    var ele = document.getElementById('posSavings');
+    ele.innerHTML = "You could have save " + (amt/2) + " per year, if you purchase this item every other day";
+}
 
-    */
-    $('#newForm').append('<form class="form-inline">' +
-        '<div class="form-group">' +
-        '<label class="sr-only" for="Amount">Amount (in dollars)</label>'+
-        '<div class="input-group">' +
-        '<div class="input-group-addon">$</div>' +
-        '<input type="text" class="form-control" id="Amount" placeholder="Daily Amount">' +
-        '</div>'+
-        '</div>'+
-        '<button class="isClicked" type="button" onclick="calcYearly()" class="btn btn-primary">Submit</button>'+
-        '</form>'+
-            '<br>'
 
-    )});
-document.onload
+
+
+
+$('#addForm').click(function(){  //jQ
+    $("#addMoney").show();
+
+});
+
+document.onload //javascript way
 {
     var subButton = document.getElementById('submitButton');
+    subButton.addEventListener('click', calcYearly);
+    $("#addMoney").hide();
+    var newButton = document.getElementById('submitButton2');
+    newButton.addEventListener('click', calcNewFormYearly);
 
-  subButton.addEventListener('click', calcYearly);
 };
+
+/*
+ $('#newForm').append('<form class="form-inline">' +
+ '<div class="form-group">' +
+ '<label class="sr-only" for="Amount">Amount (in dollars)</label>'+
+ '<div class="input-group">' +
+ '<div class="input-group-addon">$</div>' +
+ '<input type="text" class="form-control" id="Amount" placeholder="Daily Amount">' +
+ '</div>'+
+ '</div>'+
+ '<button class="isClicked" type="button" class="btn btn-primary">Submit</button>'+
+ '</form>'+
+ '<br>'
+ )
+ */

@@ -25,30 +25,22 @@
 
 <div class="container">
 
-
-
-<div id="getName">
+    <div id="getName">
     <h1>Welcome</h1>
     <div class="container text-lg-center">
-
         <br>
-
         <form class="form-inline">
             <div class="form-group">
 
-
                 <div class="input-group">
-
                     <input type="text" class="form-control" id="firstName" placeholder="Enter your first name: ">
                 </div>
-
                 <div class="input-group">
                     <input type="text" class="form-control" id="lastName" placeholder="Enter your last name: ">
                 </div>
                 <div class="input-group">
                     <input type="text" class="form-control" id="userSavings" placeholder="Enter your current savings: ">
                 </div>
-
             </div>
             <button type="button" onclick="displayInfo()" class="getN btn btn-primary">Submit</button>
         </form>
@@ -63,8 +55,6 @@
 
 <hr>
 <br>
-
-
     <section id="addMoneySpent">
     <h2 class="text-md-center">Calculate what you could save</h2>
 
@@ -80,11 +70,24 @@
         </div>
         <button id="submitButton" type="button" class="btn btn-primary">Submit</button>
     </form>
-
     </section>
+
     <button type="button" class="btn btn-default" id="addForm" aria-label="Right Align">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
     </button>
+    <br>
+    <div id="addMoney">
+        <form class="form-inline">
+            <div class="form-group">
+                <label class="sr-only" for="Amount">Amount (in dollars)</label>
+                <div class="input-group">
+                    <div class="input-group-addon">$</div>
+                    <input type="text" class="form-control" id="newFormAmount" placeholder="Daily Amount">
+                </div>
+            </div>
+            <button id="submitButton2" type="button" class="btn btn-primary">Submit</button>
+        </form>
+</div>
 
     <p id="amntSaved"></p>
     <p id="posSavings"></p>
