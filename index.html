@@ -42,7 +42,7 @@
                     <input type="text" class="form-control" id="userSavings" placeholder="Enter your current savings: ">
                 </div>
             </div>
-            <button type="button" onclick="displayInfo()" class="getN btn btn-primary">Submit</button>
+            <button type="button" id="submitInfo" class="getN btn btn-primary">Submit</button>
         </form>
     </div>
 </div> <!-- close getName div, Everything in here will dissapear-->
@@ -62,13 +62,12 @@
 
     <form class="form-inline">
         <div class="form-group">
-            <label class="sr-only" for="Amount">Amount (in dollars)</label>
             <div class="input-group">
                 <div class="input-group-addon">$</div>
-                <input type="text" class="form-control" id="Amount" placeholder="Daily Amount">
+                <input type="text" class="form-control" id="form1" placeholder="Daily Amount">
             </div>
         </div>
-        <button id="submitButton" type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="calcMoney btn btn-primary" dataButtonId="form1">Submit</button>
     </form>
     </section>
 
@@ -79,21 +78,20 @@
     <div id="addMoney">
         <form class="form-inline">
             <div class="form-group">
-                <label class="sr-only" for="Amount">Amount (in dollars)</label>
                 <div class="input-group">
                     <div class="input-group-addon">$</div>
-                    <input type="text" class="form-control" id="newFormAmount" placeholder="Daily Amount">
+                    <input type="text" class="form-control" id="form2" placeholder="Daily Amount">
                 </div>
             </div>
-            <button id="submitButton2" type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="calcMoney btn btn-primary" dataButtonId="form2">Submit</button>
         </form>
 </div>
 
     <p id="amntSaved"></p>
     <p id="posSavings"></p>
+    <p id ="moreSavings"></p>
     <p id="newForm"></p>
 
-    <h4 style="color:red">TODO:  Plus button that adds another calc savings button for another daily expenditure</h4>
     <h5 style="color:red">TODO:  Add save info tool that allows you to take all the useful information into a printable format</h5>
 
 </div> <!-- END CONTAINER -->
