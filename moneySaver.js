@@ -26,8 +26,9 @@ $(function () {
         var fillGreet = document.getElementById("greetingMSG");
         fillGreet.textContent = "Welcome to savings calculator " + person.welcome();
 
+        var today = new Date();
         var currSav = document.getElementById("currSavings");
-        currSav.textContent = "Congratulations on saving $" + person.amnt + " so far";
+        currSav.textContent = "Congratulations on saving $" + person.amnt + " as of " + today.toDateString();
 
         console.log(person.amnt);
     }
@@ -42,14 +43,29 @@ $(function () {
     });
 
 
+    var total = 0; //total must be outside of function so that is global variable
+
     $('.calcMoney').click(function () {
         var formID = $(this).attr('dataButtonId'); //gave BOTH submit buttons a dataButtonID and set it equal to
                                                    //  the ID of the form the user will be filling out so when they click it,
                                                    // you will get that value
         var amt = $('#'+formID).val();
-        amt = amt * 260;
-        $('#amntSaved').html("You spent " + amt + " yearly");
 
+        if(isNaN(amt)){ // prevent string input
+            $('#amntSaved').html("You must enter a number");
+            return;
+        }
+        amt = amt * 260;
+        total += amt;
+        if (formID === 'form1') {
+            $('#amntSaved').html("You spent " + amt + " yearly.");
+        }else if (formID === 'form2'){
+            $('#moreSavings').html("You spent " + amt + " yearly.");
+        }
+
+
+
+        $('#totalSavings').html("Running total is: " + total);
 
     });
 
