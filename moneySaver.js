@@ -4,6 +4,7 @@
 $(function () {
 
     $("#addMoney").hide();
+    $("#addMoneySpent").hide();
 
     function displayInfo(){
 
@@ -39,6 +40,7 @@ $(function () {
     $(".getN").click(function(){
         $(".niceBorder").addClass('jumbotron text-lg-center');
         $("#getName").fadeOut(1000);
+        $("#addMoneySpent").show();
 
     });
 
@@ -114,19 +116,6 @@ $(function () {
  ele.innerHTML = "You could have save " + (amt/2) + " per year, if you purchase this item every other day";
  }
 
- function calcNewFormYearly(){
- var amt = document.getElementById("newFormAmount").value;
- if (isNaN(amt)) {
- document.getElementById('amntSaved').innerHTML = "You must enter a number";
- return;
- }
- amt = amt * 260;
- document.getElementById('amntSaved').innerHTML = "You spend " + amt + " yearly.";
- var ele = document.getElementById('moreSavings');
- ele.innerHTML = "You could have save " + (amt/2) + " per year, if you purchase this item every other day";
- }
-
-
-
+ 
 
  */

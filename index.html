@@ -23,10 +23,10 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container text-center">
 
     <div id="getName">
-        <div class="container text-center">
+        <div class="container">
             <h1>Welcome</h1>
             <br>
         <form class="form-inline">
@@ -55,7 +55,7 @@
 
 <hr>
 <br>
-    <section id="addMoneySpent">
+    <div id="addMoneySpent">
     <h2 class="text-md-center">Calculate what you could save</h2>
 
     <p class="exText">Enter an amount you spend every work day <br /> Example, you get a coffee everyday for $2</p>
@@ -69,7 +69,7 @@
         </div>
         <button type="button" class="calcMoney btn btn-primary" dataButtonId="form1">Submit</button>
     </form>
-    </section>
+
 
     <button type="button" class="btn btn-default" id="addForm" aria-label="Right Align">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -85,7 +85,8 @@
             </div>
             <button type="button" class="calcMoney btn btn-primary" dataButtonId="form2">Submit</button>
         </form>
-</div>
+    </div>
+
 
     <p id="amntSaved"></p>
     <p id="posSavings"></p>
