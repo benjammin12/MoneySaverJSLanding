@@ -1,8 +1,11 @@
 /**
  * Created by benjaminxerri on 8/1/16.
  */
+var savings = 0;
+
 $(function () {
 
+    //hide add money forms until user enters name and savings
     $("#addMoney").hide();
     $("#addMoneySpent").hide();
 
@@ -10,7 +13,7 @@ $(function () {
 
         var fName = document.getElementById("firstName").value;
         var lName = document.getElementById("lastName").value;
-        window.savings = document.getElementById("userSavings").value; //make global
+        savings = document.getElementById("userSavings").value; //global
 
         var person = {
             name:fName,
@@ -54,25 +57,25 @@ $(function () {
         var amt = $('#'+formID).val();
 
         if(isNaN(amt)){ // prevent string input
-            $('#amntSaved').html("You must enter a number");
+            $('#amntSaved').textContent("You must enter a number");
             return;
         }
         amt = amt * 260;
         total += amt;
         if (formID === 'form1') {
-            $('#amntSaved').html("You spent " + amt + " yearly.");
+            $('#amntSaved').text("You spent " + amt + " yearly.");
         }else if (formID === 'form2'){
-            $('#moreSavings').html("You spent " + amt + " yearly.");
+            $('#moreSavings').text("You spent " + amt + " yearly.");
         }
 
 
 
-        $('#totalSavings').html("Running total is: " + total);
+        $('#totalSavings').text("Running total is: " + total);
 
     });
 
 
-    $('#addForm').click(function(){  //jQ
+    $('#addForm').click(function(){  //makes second form show
         $("#addMoney").show();
 
     });
