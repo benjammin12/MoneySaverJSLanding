@@ -1,9 +1,10 @@
 /**
  * Created by benjaminxerri on 8/1/16.
  */
-var savings = 0;
+
 
 $(function () {
+    var savings = 0;
 
     //hide add money forms until user enters name and savings
     $("#addMoney").hide();
@@ -15,6 +16,8 @@ $(function () {
         var lName = document.getElementById("lastName").value;
         savings = document.getElementById("userSavings").value; //global
 
+     //   Math.floor(savings);
+
         var person = {
             name:fName,
             last:lName,
@@ -24,7 +27,7 @@ $(function () {
             }
         };
 
-        console.log(person.name);
+        console.log(fName);
         console.log(person.last);
 
         var fillGreet = document.getElementById("greetingMSG");
@@ -62,15 +65,18 @@ $(function () {
         }
         amt = amt * 260;
         total += amt;
+
+
         if (formID === 'form1') {
             $('#amntSaved').text("You spent " + amt + " yearly.");
         }else if (formID === 'form2'){
             $('#moreSavings').text("You spent " + amt + " yearly.");
         }
 
-
+         savings += total;
 
         $('#totalSavings').text("Running total is: " + total);
+
 
     });
 
@@ -79,11 +85,17 @@ $(function () {
         $("#addMoney").show();
 
     });
-
+    
+    
+    function displaySummary(){
+        console.log('Your savings could be ' + (savings + total));
+    }
 
     var userInfo = document.getElementById('submitInfo');
     userInfo.addEventListener('click', displayInfo);
 
+    var sumInfo = document.getElementById('sumUpInfo');
+    sumInfo.addEventListener('click', displaySummary);
 
 
 });
