@@ -5,7 +5,7 @@
 
 $(function () {
     var savings = 0;
-
+    var intSavings;
     //hide add money forms until user enters name and savings
     $("#addMoney").hide();
     $("#addMoneySpent").hide();
@@ -16,12 +16,13 @@ $(function () {
         var lName = document.getElementById("lastName").value;
         savings = document.getElementById("userSavings").value; //global
 
-     //   Math.floor(savings);
+        intSavings = parseInt(savings); //savings is taken as a string and must be converted to an Int
+
 
         var person = {
             name:fName,
             last:lName,
-            amnt: savings,
+            amnt: intSavings,
             welcome: function(){
                 return this.name + " " + this.last;
             }
@@ -59,7 +60,9 @@ $(function () {
                                                    // you will get that value
         var amt = $('#'+formID).val();
 
-        if(isNaN(amt)){ // prevent string input
+        var amtToInt = parseInt(amt);
+
+        if(isNaN(amtToInt)){ // prevent string input
             $('#amntSaved').textContent("You must enter a number");
             return;
         }
@@ -73,7 +76,7 @@ $(function () {
             $('#moreSavings').text("You spent " + amt + " yearly.");
         }
 
-         savings += total;
+         intSavings += total;
 
         $('#totalSavings').text("Running total is: " + total);
 
@@ -88,7 +91,11 @@ $(function () {
     
     
     function displaySummary(){
-        console.log('Your savings could be ' + (savings + total));
+        $('#displaySummary').text(''); //first clear the text to prevent multiple appending of text
+        $('#displaySummary').addClass('jumbotron text-lg-center');
+        $('#displaySummary').append("You would have saved a total of " + intSavings);
+
+        console.log("Fix adding savings bars more than once ")
     }
 
     var userInfo = document.getElementById('submitInfo');
