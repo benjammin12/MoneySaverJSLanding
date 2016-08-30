@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Money Saver</title>
 
-    <!-- Bootstrap -->
+    <!-- Bootstraps -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -25,9 +25,15 @@
 
 <div class="container text-center">
 
+
     <div id="getName">
         <div class="container">
-            <h1>Welcome</h1>
+            <h2>Money Saving Tool</h2>
+            <p>This is a simple tool that can help people save money.  It begins by having a user enter some basic information and current savings</p>
+            <p>It then allows the user to enter in some money they might be spending on a daily basis, which is then multiplied by a simple math formula</p>
+            <hr>
+            <p>No login needed because I'm tired of creating an account for everything on the internet</p>
+
             <br>
         <form class="form-inline">
             <div class="form-group">
@@ -67,10 +73,10 @@
                 <input type="text" class="form-control" id="form1" placeholder="Daily Amount">
             </div>
         </div>
-        <button type="button" class="calcMoney btn btn-primary" dataButtonId="form1">Submit</button>
+        <button type="button" class="calcMoney btn btn-primary" dataButtonId="form1">Submit to Total</button>
     </form>
 
-
+    <br>
     <button type="button" class="btn btn-default" id="addForm" aria-label="Right Align">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
     </button>
@@ -83,12 +89,13 @@
                     <input type="text" class="form-control" id="form2" placeholder="Daily Amount">
                 </div>
             </div>
-            <button type="button" class="calcMoney btn btn-primary" dataButtonId="form2">Submit</button>
+            <button type="button" class="calcMoney btn btn-primary" dataButtonId="form2">Submit to Total</button>
         </form>
     </div>
 
         <div id="summary">
-        <button type="button" id="sumUpInfo" class="btn btn-primary">Get Summary</button>
+            <br>
+            <button type="button" id="sumUpInfo" class="btn btn-primary">Get Summary</button>
 
         </div>
 

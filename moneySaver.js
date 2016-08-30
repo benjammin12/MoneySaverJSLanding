@@ -16,7 +16,7 @@ $(function () {
         var lName = document.getElementById("lastName").value;
         savings = document.getElementById("userSavings").value; //global
 
-        intSavings = parseInt(savings); //savings is taken as a string and must be converted to an Int
+        intSavings = parseInt(savings); //savings input string and must be converted to an Int
 
 
         var person = {
@@ -76,8 +76,6 @@ $(function () {
             $('#moreSavings').text("You spent " + amt + " yearly.");
         }
 
-         intSavings += total;
-
         $('#totalSavings').text("Running total is: " + total);
 
 
@@ -93,9 +91,8 @@ $(function () {
     function displaySummary(){
         $('#displaySummary').text(''); //first clear the text to prevent multiple appending of text
         $('#displaySummary').addClass('jumbotron text-lg-center');
-        $('#displaySummary').append("You would have saved a total of " + intSavings);
+        $('#displaySummary').append("You would have saved a total of " + (intSavings + total));
 
-        console.log("Fix adding savings bars more than once ")
     }
 
     var userInfo = document.getElementById('submitInfo');
@@ -109,35 +106,3 @@ $(function () {
 
 
 
-
-
-
-/*
- $('#newForm').append('<form class="form-inline">' +
- '<div class="form-group">' +
- '<label class="sr-only" for="Amount">Amount (in dollars)</label>'+
- '<div class="input-group">' +
- '<div class="input-group-addon">$</div>' +
- '<input type="text" class="form-control" id="Amount" placeholder="Daily Amount">' +
- '</div>'+
- '</div>'+
- '<button class="isClicked" type="button" class="btn btn-primary">Submit</button>'+
- '</form>'+
- '<br>'
- )
-
- function calcYearly() {
- var amt = document.getElementById("Amount").value;
- if (isNaN(amt)) {
- document.getElementById('amntSaved').innerHTML = "You must enter a number";
- return;
- }
- amt = amt * 260;
- document.getElementById('amntSaved').innerHTML = "You spend " + amt + " yearly.";
- var ele = document.getElementById('posSavings');
- ele.innerHTML = "You could have save " + (amt/2) + " per year, if you purchase this item every other day";
- }
-
- 
-
- */
