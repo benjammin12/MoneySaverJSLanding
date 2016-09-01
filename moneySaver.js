@@ -4,6 +4,7 @@
 
 
 $(function () {
+    console.log("Change fonts, textsize of bottom jumbotron")
     var savings = 0;
     var intSavings;
     //hide add money forms until user enters name and savings
@@ -71,11 +72,12 @@ $(function () {
 
 
         if (formID === 'form1') {
-            $('#amntSaved').text("You spent " + amt + " yearly.");
+            $('#amntSaved').val("You spent " + amt + " yearly.");
+            $('#form1').val("");
         }else if (formID === 'form2'){
             $('#moreSavings').text("You spent " + amt + " yearly.");
+            $('#form2').val("");
         }
-
         $('#totalSavings').text("Running total is: " + total);
 
 
