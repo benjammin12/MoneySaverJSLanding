@@ -39,7 +39,7 @@ hr{
     background-color:  papayawhip;
 }
 
-#greetingMSG, #currSavings {
+#greetingMSG, #currSavings, #displaySummary {
     font-size: 200%;
 }
 

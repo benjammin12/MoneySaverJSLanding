@@ -4,7 +4,6 @@
 
 
 $(function () {
-    console.log("Change fonts, textsize of bottom jumbotron")
     var savings = 0;
     var intSavings;
     //hide add money forms until user enters name and savings
@@ -93,7 +92,7 @@ $(function () {
     function displaySummary(){
         $('#displaySummary').text(''); //first clear the text to prevent multiple appending of text
         $('#displaySummary').addClass('jumbotron text-lg-center');
-        $('#displaySummary').append("You would have saved a total of " + (intSavings + total));
+        $('#displaySummary').text("You would have saved a total of " + (intSavings + total));
 
     }
 
