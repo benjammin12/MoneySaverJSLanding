@@ -1,21 +1,22 @@
+#greetingMSG,#currSavings, {
+    font-family: 'Prompt', sans-serif;
+}
 
 body {
     background-color: lightgreen;
 }
 
-.topHeader{
-    background-color: papayawhip;
-    width:100% !important;
-    height: 150px;
-    margin-bottom: 20px;
-    padding-top:50px;
-    text-align: center;
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.container{
-
+.changeMiddle {
+    background-color: white;
+    height: 100%;
 }
-
 
 .exText{
     color: grey;
@@ -35,9 +36,6 @@ body {
     background-color: white;
 }
 
-hr{
-    background-color:  papayawhip;
-}
 
 #greetingMSG, #currSavings, #displaySummary {
     font-size: 200%;

@@ -77,7 +77,7 @@ $(function () {
             $('#moreSavings').text("You spent " + amt + " yearly.");
             $('#form2').val("");
         }
-        $('#totalSavings').text("Running total is: " + total);
+        $('#totalSavings').text("Running total yearly total is: " + total);
 
 
     });
