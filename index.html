@@ -64,17 +64,31 @@
     <div id="addMoneySpent">
     <h2 class="text-md-center">Calculate what you could save</h2>
 
-    <p class="exText">Enter an amount you spend every work day <br /> Example, you get a coffee everyday for $2</p>
+    <p class="exText">Enter an amount you spend every work day <br /> Example, you get a coffee everyday for $2 <br />
+    Select the amount of times per week that you buy this item.</p>
+
 
     <form class="form-inline">
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">$</div>
                 <input type="text" class="form-control" id="form1" placeholder="Daily Amount">
+                <select class="form-control selectAmount">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                </select>
             </div>
+            <p class="text-left">Select Times per week</p>
         </div>
         <button type="button" class="calcMoney btn btn-primary" dataButtonId="form1">Submit to Total</button>
     </form>
+
+
 
     <br>
     <button type="button" class="btn btn-default" id="addForm" aria-label="Right Align">
@@ -87,6 +101,15 @@
                 <div class="input-group">
                     <div class="input-group-addon">$</div>
                     <input type="text" class="form-control" id="form2" placeholder="Daily Amount">
+                    <select class="form-control selectAmount">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                    </select>
                 </div>
             </div>
             <button type="button" class="calcMoney btn btn-primary" dataButtonId="form2">Submit to Total</button>

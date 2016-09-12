@@ -66,9 +66,10 @@ $(function () {
             $('#amntSaved').textContent("You must enter a number");
             return;
         }
-        amt = amt * 260;
-        total += amt;
 
+        var times = document.getElementsByClassName('selectAmount').value;
+        amt = amt * 52;
+        total += amt;
 
         if (formID === 'form1') {
             $('#amntSaved').val("You spent " + amt + " yearly.");
