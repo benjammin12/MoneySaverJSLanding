@@ -67,8 +67,8 @@ $(function () {
             return;
         }
 
-        var times = document.getElementsByClassName('selectAmount').value;
-        amt = amt * 52;
+        var times = document.getElementById("frmAmnt").value;
+        amt = (times * amt) * 52;
         total += amt;
 
         if (formID === 'form1') {
@@ -93,7 +93,7 @@ $(function () {
     function displaySummary(){
         $('#displaySummary').text(''); //first clear the text to prevent multiple appending of text
         $('#displaySummary').addClass('jumbotron text-lg-center');
-        $('#displaySummary').text("You would have saved a total of " + (intSavings + total));
+        $('#displaySummary').text("Your savings could be $" + (intSavings + total));
 
     }
 
