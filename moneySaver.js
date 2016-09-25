@@ -60,7 +60,7 @@ $(function () {
                                                    // you will get that value
         var amt = $('#'+formID).val();
 
-        var amtToInt = parseInt(amt);
+        var amtToInt = parseInt(amt); //user input is always a string
 
         if(isNaN(amtToInt)){ // prevent string input
             $('#amntSaved').textContent("You must enter a number");
@@ -74,21 +74,24 @@ $(function () {
         if (formID === 'form1') {
             $('#amntSaved').val("You spent " + amt + " yearly.");
             $('#form1').val("");
-        }else if (formID === 'form2'){
+        }
+        
+        /*else if (formID === 'form2'){
             $('#moreSavings').text("You spent " + amt + " yearly.");
             $('#form2').val("");
-        }
+        }  //for second form
+        */
         $('#totalSavings').text("Running total yearly total is: " + total);
 
 
     });
 
-
+/*
     $('#addForm').click(function(){  //makes second form show
         $("#addMoney").show();
 
     });
-    
+*/    
     
     function displaySummary(){
         $('#displaySummary').text(''); //first clear the text to prevent multiple appending of text

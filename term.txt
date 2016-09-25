@@ -3,3 +3,29 @@ git checkout -b gh-pages
 git push origin gh-pages
 
 git push --set-upstream origin gh-pages
+
+    <div id="addMoney">
+        <form class="form-inline">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">$</div>
+                    <input type="text" class="form-control" id="form2" placeholder="Daily Amount">
+                    <select class="form-control selectAmount" id="frmAmnt2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                    </select>
+                </div>
+            </div>
+            <button type="button" class="calcMoney btn btn-primary" dataButtonId="form2">Submit to Total</button>
+        </form>
+    </div>
+
+       <br>
+        <button type="button" class="btn btn-default" id="addForm" aria-label="Right Align">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>

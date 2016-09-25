@@ -1,9 +1,13 @@
-#greetingMSG,#currSavings, {
+#greetingMSG,#currSavings{
     font-family: 'Prompt', sans-serif;
 }
 
 body {
     background-color: lightgreen;
+}
+
+#getName {
+    font-size: 125%;
 }
 
 .container {
