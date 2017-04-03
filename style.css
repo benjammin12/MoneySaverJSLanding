@@ -48,3 +48,14 @@ body {
 #addForm {
     margin-left: 20%;
 }
+
+.passwordMessage {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+
+    width: 450px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}

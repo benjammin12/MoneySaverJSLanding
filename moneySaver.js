@@ -12,44 +12,50 @@ $(function () {
 
     function displayInfo(){
 
-        var fName = document.getElementById("firstName").value;
-        var lName = document.getElementById("lastName").value;
-        savings = document.getElementById("userSavings").value; //global
+        var isValid = fieldHasAttribute('signUp');
 
-        intSavings = parseInt(savings); //savings input string and must be converted to an Int
+        if (!(isValid)){
+            passWordmess.textContent ="**You need to fill out all fields to proceed";
+        }
+        else {
+            var fName = document.getElementById("firstName").value;
+            var lName = document.getElementById("lastName").value;
+            savings = document.getElementById("userSavings").value; //global
+            intSavings = parseInt(savings); //savings input string and must be converted to an Int
 
 
-        var person = {
-            name:fName,
-            last:lName,
-            amnt: intSavings,
-            welcome: function(){
-                return this.name + " " + this.last;
+            var person = {
+                name: fName,
+                last: lName,
+                amnt: intSavings,
+                welcome: function () {
+                    return this.name + " " + this.last;
+                }
+            };
+
+            var fillGreet = document.getElementById("greetingMSG");
+            fillGreet.textContent = "Welcome to savings calculator " + person.welcome();
+
+            var today = new Date();
+            var currSav = document.getElementById("currSavings");
+
+            if (person.amnt > 0) {
+                currSav.textContent = "Congratulations on saving $" + person.amnt + " as of " + today.toDateString();
             }
-        };
+            else {
+                currSav.textContent = "It looks like your in debt of $" + Math.abs(person.amnt) + " as of " + today.toDateString() +
+                    ". Try not to worry about that, we can help give you an idea of what you can save!";
+            }
+            $(".niceBorder").addClass('jumbotron text-lg-center');
+            $("#getName").fadeOut(1000);
+            $("#addMoneySpent").show();
 
-        console.log(fName);
-        console.log(person.last);
-
-        var fillGreet = document.getElementById("greetingMSG");
-        fillGreet.textContent = "Welcome to savings calculator " + person.welcome();
-
-        var today = new Date();
-        var currSav = document.getElementById("currSavings");
-        currSav.textContent = "Congratulations on saving $" + person.amnt + " as of " + today.toDateString();
-
-        console.log(person.amnt);
+        }
     }
 
 
 
 //jQuery .click function
-    $(".getN").click(function(){
-        $(".niceBorder").addClass('jumbotron text-lg-center');
-        $("#getName").fadeOut(1000);
-        $("#addMoneySpent").show();
-
-    });
 
 
     var total = 0; //total must be outside of function so that is global variable
@@ -75,39 +81,39 @@ $(function () {
             $('#amntSaved').val("You spent " + amt + " yearly.");
             $('#form1').val("");
         }
-        
-        /*else if (formID === 'form2'){
-            $('#moreSavings').text("You spent " + amt + " yearly.");
-            $('#form2').val("");
-        }  //for second form
-        */
         $('#totalSavings').text("Running total yearly total is: " + total);
 
 
     });
 
-/*
-    $('#addForm').click(function(){  //makes second form show
-        $("#addMoney").show();
-
-    });
-*/    
-    
     function displaySummary(){
         $('#displaySummary').text(''); //first clear the text to prevent multiple appending of text
         $('#displaySummary').addClass('jumbotron text-lg-center');
         $('#displaySummary').text("Your savings could be $" + (intSavings + total));
 
     }
+    var passWordmess = document.querySelector(".passwordMessage");
 
-    var userInfo = document.getElementById('submitInfo');
-    userInfo.addEventListener('click', displayInfo);
+
 
     var sumInfo = document.getElementById('sumUpInfo');
     sumInfo.addEventListener('click', displaySummary);
+    var userInfo = document.getElementById('submitInfo');
+    userInfo.addEventListener('click', displayInfo);
+
+
+    function fieldHasAttribute(name){
+        var form =  document.getElementById(name);
+        for(i = 0; i < form.length ; i++){
+            if(form[i].hasAttribute("required") && form[i].value === '')
+                return false; //if it returns true, then fields with required are filled
+        }
+        return true;
+    }
 
 
 });
+
 
 
 

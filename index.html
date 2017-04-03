@@ -35,18 +35,19 @@
             <p>No login needed, <u>just JavaScript</u></p>
 
             <br>
-        <form class="form-inline">
+        <form id="signUp" class="form-inline">
             <div class="form-group">
 
                 <div class="input-group">
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter your first name: ">
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter your first name: " required>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="lastName" placeholder="Enter your last name: ">
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter your last name: " required>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="userSavings" placeholder="Current savings: ">
+                    <input type="number" class="form-control" id="userSavings" placeholder="Current savings: " required>
                 </div>
+                <div class="passwordMessage"></div>
             </div>
             <button type="button" id="submitInfo" class="getN btn btn-primary">Submit</button>
         </form>
